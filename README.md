@@ -127,7 +127,8 @@ The target file `My Locked PDF1.pdf` was located in the Downloads folder.
 ls -la ~/Downloads/My\ Locked\ PDF1.pdf
 ```
 
-![Lock PDF](evidences/module-1/1-lock-pdf.png)
+<img width="553" height="205" alt="Screenshot from 2026-08-27 18-58-18" src="https://github.com/user-attachments/assets/b2cdaa00-62dc-4e32-8d9e-9baecbb9f288" />
+
 
 **Figure 1:** Target PDF file in Downloads folder.
 
@@ -146,7 +147,8 @@ perl /usr/share/john/pdf2john.pl "My Locked PDF1.pdf" > hash1.txt
 pdf2john "My Locked PDF1.pdf" > hash1.txt
 ```
 
-![Hash Extraction](evidences/module-1/2-hash-extraction.png)
+<img width="842" height="668" alt="john1" src="https://github.com/user-attachments/assets/82bd612c-b3cc-4805-89cc-26000fb707d1" />
+
 
 **Figure 2:** Hash extraction using pdf2john.pl.
 
@@ -163,7 +165,8 @@ cat hash1.txt
 My Locked PDF1.pdf:$pdf$4*4*128*-1028*1*16*ca7f72f11459cba469f1005a8765ed51*32*f32d8fa1bfbe2648226dffc39f7909ea0021446990b9e4114071a4d9104984c1*32*9322f50c29569712067a775264635e4954ccb1b99e209d664984054ffad30a6a
 ```
 
-![Hash Displayed](evidences/module-1/3-hash-displayed.png)
+<img width="1243" height="100" alt="hash of john" src="https://github.com/user-attachments/assets/baa28d9d-e15e-402b-82a1-0257cd3e5dda" />
+
 
 **Figure 3:** Extracted hash displayed.
 
@@ -187,8 +190,7 @@ good-luck        (My Locked PDF1.pdf)
 Use the "--show --format=PDF" options to display all of the cracked passwords reliably
 Session completed.
 ```
-
-![JTR Cracking](evidences/module-1/4-jtr-cracking.png)
+<img width="365" height="112" alt="pdf 1 password crack" src="https://github.com/user-attachments/assets/8e4d7cf9-c341-4df6-9589-6d9af0c86a05" />
 
 **Figure 4:** John the Ripper cracking the password.
 
@@ -206,8 +208,8 @@ My Locked PDF1.pdf:good-luck
 
 1 password hash cracked, 0 left
 ```
+<img width="365" height="112" alt="pdf 1 password crack" src="https://github.com/user-attachments/assets/6a5b2690-4ab3-41e7-8498-f8649c8dc9b7" />
 
-![Cracked Password](evidences/module-1/5-cracked-password.png)
 
 **Figure 5:** Cracked password displayed as `good-luck`.
 
@@ -222,7 +224,8 @@ Johnny GUI was opened and the hash was loaded:
 3. Clicked **"Start new attack"**
 4. Password `good-luck` was displayed in the results pane
 
-![Johnny GUI](evidences/module-1/6-johnny-gui.png)
+<img width="2559" height="1403" alt="jhonny output" src="https://github.com/user-attachments/assets/28a20e5f-8bef-4f97-9716-8e0700cf64f0" />
+
 
 **Figure 6:** Johnny GUI cracking the password.
 
@@ -232,7 +235,8 @@ Johnny GUI was opened and the hash was loaded:
 
 The PDF was opened using `good-luck`.
 
-![PDF Opened](evidences/module-1/7-pdf-opened.png)
+<img width="808" height="1127" alt="pdf1 password crack" src="https://github.com/user-attachments/assets/bf25e91b-e929-46e4-b587-0c13a6765cbf" />
+
 
 **Figure 7:** PDF successfully unlocked and opened.
 

@@ -1,4 +1,3 @@
-<img width="842" height="668" alt="john1" src="https://github.com/user-attachments/assets/6b18e8e7-5f19-424e-83e4-8eaf4b83f4be" />
 Networkwalks W3 - Password Cracking with John the Ripper, Johnny, Networkwalks Tools & HexStrike MCP
 
 <div align="center">

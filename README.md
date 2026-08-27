@@ -1,4 +1,5 @@
-<img width="876" height="1187" alt="hash jtr" src="https://github.com/user-attachments/assets/1c5e7e0e-43d4-4935-990b-a66ef6e384b0" />B082 - Networkwalks W3 - Password Cracking with John the Ripper, Johnny, Networkwalks Tools & HexStrike MCP
+<img width="842" height="668" alt="john1" src="https://github.com/user-attachments/assets/6b18e8e7-5f19-424e-83e4-8eaf4b83f4be" />
+Networkwalks W3 - Password Cracking with John the Ripper, Johnny, Networkwalks Tools & HexStrike MCP
 
 <div align="center">
 
@@ -625,6 +626,8 @@ The PDF was opened using `password1`.
 | 1 | `nw{cybersecurity_flag_captured_2608}` | My Locked PDF1.pdf |
 
 <img width="808" height="1127" alt="pdf1 password crack" src="https://github.com/user-attachments/assets/fa8a4746-bfc5-4bf0-99f7-f6008045c439" />
+<img width="365" height="112" alt="pdf 1 password crack" src="https://github.com/user-attachments/assets/64396e33-c9ac-4820-bb21-3cbdc61dac91" />
+<img width="842" height="668" alt="john1" src="https://github.com/user-attachments/assets/f863d8b9-f7dc-4e6b-8432-66de49c6c929" />
 
 
 ---

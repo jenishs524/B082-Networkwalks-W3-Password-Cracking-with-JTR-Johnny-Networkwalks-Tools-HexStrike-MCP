@@ -1,4 +1,4 @@
-B082 - Networkwalks W3 - Password Cracking with John the Ripper, Johnny, Networkwalks Tools & HexStrike MCP
+<img width="876" height="1187" alt="hash jtr" src="https://github.com/user-attachments/assets/1c5e7e0e-43d4-4935-990b-a66ef6e384b0" />B082 - Networkwalks W3 - Password Cracking with John the Ripper, Johnny, Networkwalks Tools & HexStrike MCP
 
 <div align="center">
 
@@ -376,7 +376,8 @@ sudo apt update
 sudo apt install claude-desktop
 ```
 
-![Claude Desktop Installed](evidences/module-3/1-claude-installed.png)
+<img width="429" height="111" alt="claude desktop" src="https://github.com/user-attachments/assets/4ccc36e7-7e95-4637-9bca-9c16e567913a" />
+
 
 **Figure 14:** Claude Desktop installed.
 
@@ -389,7 +390,8 @@ git clone https://github.com/0x4m4/hexstrike-ai.git
 cd hexstrike-ai
 ```
 
-![HexStrike Cloned](evidences/module-3/2-hexstrike-cloned.png)
+<img width="580" height="388" alt="hetstrike cloned" src="https://github.com/user-attachments/assets/92f522c7-8813-4c09-92f7-2e0586ef6d39" />
+
 
 **Figure 15:** HexStrike repository cloned.
 
@@ -402,7 +404,8 @@ python3 -m venv hexstrike-env
 source hexstrike-env/bin/activate
 ```
 
-![Virtual Environment](evidences/module-3/3-virtual-env.png)
+<img width="456" height="303" alt="virtual env" src="https://github.com/user-attachments/assets/e5ce800d-d2a0-4424-84fc-63898f5d2db9" />
+
 
 **Figure 16:** Virtual environment created.
 
@@ -414,7 +417,8 @@ source hexstrike-env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-![Pip List](evidences/module-3/4-pip-list.png)
+<img width="1206" height="1338" alt="pip list" src="https://github.com/user-attachments/assets/b547fe16-4b21-46d4-9d59-5fd408c48891" />
+
 
 **Figure 17:** Python dependencies installed.
 
@@ -439,7 +443,8 @@ Configuration file `~/.config/Claude/claude_desktop_config.json`:
 }
 ```
 
-![Claude JSON](evidences/module-3/5-claude-json.png)
+<img width="986" height="543" alt="claud json" src="https://github.com/user-attachments/assets/6ff76747-7b08-409b-b619-2f82a79f3ae2" />
+
 
 **Figure 18:** MCP Server configured.
 
@@ -463,8 +468,8 @@ python3 hexstrike_mcp.py --server http://localhost:8888
 [🔥 HexStrike MCP] 2026-08-27 01:50:37 [INFO] ✅ 📊 Server version: 6.0.0
 [🔥 HexStrike MCP] 2026-08-27 01:50:38 [INFO] ✅ 🤖 Ready to serve AI agents with enhanced cybersecurity capabilities
 ```
+<img width="1128" height="435" alt="8080" src="https://github.com/user-attachments/assets/20939edf-fe05-419d-8fa5-114e1d501db8" />
 
-![HexStrike Running](evidences/module-3/6-hexstrike-running.png)
 
 **Figure 19:** HexStrike MCP Server running.
 
@@ -482,6 +487,8 @@ python3 hexstrike_mcp.py --server http://localhost:8888
 | **HexStrike MCP Server** | ✅ Running |
 
 ---
+
+<img width="1039" height="794" alt="hextrick connection in claud" src="https://github.com/user-attachments/assets/d8df0372-588b-44f8-81e3-efc7192360b6" />
 
 ## 📌 Module 4: AI-Assisted Password Cracking (W3-PM-FINAL)
 
@@ -503,7 +510,8 @@ This module is based on the lab manual: **z. Optional Module Lab - JTR Password 
 ls -la ~/Desktop/networkwalks_flag1.pdf
 ```
 
-![Target PDF](evidences/module-3/7-target-pdf.png)
+<img width="826" height="162" alt="hash3 networkwalks_flag1 pdf" src="https://github.com/user-attachments/assets/7c3a042f-8076-45dc-83eb-3da7dcf3fa88" />
+
 
 **Figure 20:** Target PDF on Desktop.
 
@@ -523,7 +531,8 @@ John the Ripper is installed on the HexStrike server, at /usr/sbin/john.
 Version: 1.9.0-jumbo-1+bleeding-aec1328d6c (built 2021-11-02), the community "jumbo" edition, compiled with OpenMP support (linux-gnu 64-bit x86_64 AVX2 AC).
 ```
 
-![AI Prompt 1](evidences/module-3/8-ai-prompt-1.png)
+<img width="797" height="1045" alt="password crack by ai with haxtristk" src="https://github.com/user-attachments/assets/1c71dd04-93a2-436e-b6cb-36d4eac2d758" />
+
 
 **Figure 21:** AI confirms JTR is installed.
 
@@ -542,7 +551,8 @@ SHA256: f569ce5208a64b0f73f5a98f2187eafcd8282641fb27afa0c1a30d83b67ef06
 MD5: 7fe04d052b19879aaa9fcac0b5dce138
 ```
 
-![AI Prompt 2](evidences/module-3/9-ai-prompt-2.png)
+<img width="797" height="1045" alt="password crack by ai with haxtristk" src="https://github.com/user-attachments/assets/58f40796-8e9f-45b0-a79a-9a84f1f4f227" />
+
 
 **Figure 22:** AI calculates hash.
 
@@ -566,7 +576,8 @@ PDF password: password1
 John found it in the rockyou.txt wordlist on the first pass (loaded as a PDF MD5 SHA2 RC4/AES 32/64 hash type).
 ```
 
-![AI Prompt 3](evidences/module-3/10-ai-prompt-3.png)
+<img width="797" height="1045" alt="password crack by ai with haxtristk" src="https://github.com/user-attachments/assets/21bbba4c-7133-4077-9388-413cb8cc2d50" />
+
 
 **Figure 23:** AI cracks password as `password1`.
 
@@ -576,7 +587,8 @@ John found it in the rockyou.txt wordlist on the first pass (loaded as a PDF MD5
 
 The PDF was opened using `password1`.
 
-![PDF Opened](evidences/module-3/11-pdf-opened.png)
+<img width="876" height="1187" alt="hash jtr" src="https://github.com/user-attachments/assets/b0a1e0c4-e08a-447c-b77a-69292b79fc4c" />
+
 
 **Figure 24:** PDF successfully unlocked.
 
@@ -612,7 +624,8 @@ The PDF was opened using `password1`.
 | :--- | :--- | :--- |
 | 1 | `nw{cybersecurity_flag_captured_2608}` | My Locked PDF1.pdf |
 
-![Flag 1](evidences/flags/flag1.png)
+<img width="808" height="1127" alt="pdf1 password crack" src="https://github.com/user-attachments/assets/fa8a4746-bfc5-4bf0-99f7-f6008045c439" />
+
 
 ---
 
@@ -620,7 +633,8 @@ The PDF was opened using `password1`.
 | :--- | :--- | :--- |
 | 2 | `nw{networkwalks_flag1_jtr_270521_1}` | networkwalks_flag1.pdf |
 
-![Flag 2](evidences/flags/flag2.png)
+<img width="876" height="1187" alt="hash jtr" src="https://github.com/user-attachments/assets/2ba3feba-2f8a-4035-a40a-d64a70195bec" />
+
 
 ---
 
@@ -628,7 +642,8 @@ The PDF was opened using `password1`.
 | :--- | :--- | :--- |
 | 3 | `nw{networkwalks_persistence_jtr_270521}` | My Locked PDF2.pdf |
 
-![Flag 3](evidences/flags/flag3.png)
+<img width="770" height="1099" alt="pdf2 password crack" src="https://github.com/user-attachments/assets/5ce11abc-c023-4572-825a-ede803527209" />
+
 
 ---
 
@@ -636,7 +651,8 @@ The PDF was opened using `password1`.
 | :--- | :--- | :--- |
 | 4 | `nw{networkwalks_flag_260821_1}` | My Locked PDF3.pdf |
 
-![Flag 4](evidences/flags/flag4.png)
+<img width="929" height="1210" alt="pdf3 password crack" src="https://github.com/user-attachments/assets/ba2ea34a-e69b-42b4-bad2-25e0f642d317" />
+
 
 ---
 

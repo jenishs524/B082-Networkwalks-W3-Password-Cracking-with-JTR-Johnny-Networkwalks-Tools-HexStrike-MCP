@@ -259,7 +259,7 @@ The PDF was opened using `good-luck`.
 
 ### Task
 
-Crack the password of `My Locked PDF1.pdf` using **Networkwalks Hash Calculator** and **Password Cracker**.
+Crack the password of `My Locked PDF3.pdf` using **Networkwalks Hash Calculator** and **Password Cracker**.
 
 ### Lab Manual Reference
 
@@ -270,8 +270,8 @@ This module is based on the lab manual: **W3-PM2 - Week3 - Project Module2 - Pas
 ### Step 1: Open Hash Calculator
 
 * **URL:** https://networkwalks.com/hash-calculator/
+<img width="1164" height="943" alt="Screenshot 2026-08-26 at 23-13-09 Hash Calculator - Networkwalks Academy" src="https://github.com/user-attachments/assets/979eea9d-d9f7-4787-969b-84d95a0c747d" />
 
-![Hash Calculator](evidences/module-2/1-hash-calculator.png)
 
 **Figure 8:** Networkwalks Hash Calculator opened.
 
@@ -279,9 +279,9 @@ This module is based on the lab manual: **W3-PM2 - Week3 - Project Module2 - Pas
 
 ### Step 2: Select PDF Tab and Upload File
 
-The **"PDF"** tab was selected and `My Locked PDF1.pdf` was uploaded.
+The **"PDF"** tab was selected and `My Locked PDF3.pdf` was uploaded.
 
-![Hash Extracted](evidences/module-2/2-hash-extracted.png)
+<img width="948" height="878" alt="Screenshot 2026-08-27 at 01-44-47 Hash Calculator - Networkwalks Academy" src="https://github.com/user-attachments/assets/1cd3c892-dae8-42d0-a5c8-87a9a893a34e" />
 
 **Figure 9:** PDF uploaded and hash extracted.
 
@@ -300,8 +300,8 @@ $pdf$4*4*128*-1028*1*16*ca7f72f11459cba469f1005a8765ed51*32*f32d8fa1bfbe2648226d
 ### Step 4: Open Password Cracker
 
 * **URL:** https://networkwalks.com/password-cracker/
+<img width="941" height="614" alt="Screenshot 2026-08-26 at 23-15-34 Password Cracker (Dictionary Attack) - Networkwalks Academy" src="https://github.com/user-attachments/assets/a1d6704b-9411-431d-b053-a65c7d18cf29" />
 
-![Password Cracker](evidences/module-2/3-password-cracker.png)
 
 **Figure 10:** Networkwalks Password Cracker opened.
 
@@ -310,8 +310,8 @@ $pdf$4*4*128*-1028*1*16*ca7f72f11459cba469f1005a8765ed51*32*f32d8fa1bfbe2648226d
 ### Step 5: Upload Wordlist and Start Attack
 
 The custom wordlist `JTR_default_password.txt` (3,546 words) was uploaded and the attack was started.
+<img width="2401" height="1356" alt="attack running" src="https://github.com/user-attachments/assets/a56445e7-8d89-44b0-916a-e97434f02f7b" />
 
-![Attack Running](evidences/module-2/4-attack-running.png)
 
 **Figure 11:** Dictionary attack in progress.
 
@@ -319,19 +319,20 @@ The custom wordlist `JTR_default_password.txt` (3,546 words) was uploaded and th
 
 ### Step 6: Password Cracked
 
-**PASSWORD: `good-luck`**
+**PASSWORD: `password1`**
 
-![Password Cracked](evidences/module-2/5-password-cracked.png)
+<img width="990" height="1186" alt="Screenshot 2026-08-27 at 00-05-45 Password Cracker (Dictionary Attack) - Networkwalks Academy" src="https://github.com/user-attachments/assets/1f048cd8-b99b-4911-8a4f-0462e00ca8d2" />
 
-**Figure 12:** Password `good-luck` successfully cracked.
+**Figure 12:** Password `password1` successfully cracked.
 
 ---
 
 ### Step 7: Verify the Password
 
-The PDF was opened using `good-luck`.
+The PDF was opened using `password1`.
 
-![PDF Opened](evidences/module-2/6-pdf-opened.png)
+<img width="876" height="1187" alt="hash jtr" src="https://github.com/user-attachments/assets/b0368afc-444c-4d1b-9597-188b7c5d2129" />
+
 
 **Figure 13:** PDF successfully unlocked.
 
@@ -345,7 +346,7 @@ The PDF was opened using `good-luck`.
 | **Cracked Password** | **good-luck** |
 | **Tool Used** | Networkwalks Hash Calculator & Password Cracker |
 | **Wordlist Used** | JTR_default_password.txt (3,546 words) |
-| **Time Taken** | ~5 seconds |
+| **Time Taken** | ~30 seconds |
 
 ---
 

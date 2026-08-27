@@ -1,48 +1,80 @@
-# B082 - Networkwalks W3 - Password Cracking with John the Ripper, Johnny, Networkwalks Tools & HexStrike MCP
+B082 - Networkwalks W3 - Password Cracking with John the Ripper, Johnny, Networkwalks Tools & HexStrike MCP
 
----
+<div align="center">
 
-| **Batch** | B082 |
+| **Batch** | **B082** |
 | :--- | :--- |
-| **Intern Name** | Jenik Shrestha |
+| **Intern Name** | **Jenik Shrestha** |
 | **Program** | Cybersecurity Training at Networkwalks Academy |
 | **Date** | 27 August 2026 |
 | **Modules** | W3-PM1 | W3-PM2 | W3-PM-FINAL |
+
+</div>
 
 ---
 
 ## 📌 Table of Contents
 
 1. [Project Overview](#-project-overview)
-2. [Tools Used](#-tools-used)
-3. [Module 1: JTR John + Johnny (W3-PM1)](#-module-1-jtr-john--johnny-w3-pm1)
-4. [Module 2: Networkwalks Tools (W3-PM2)](#-module-2-networkwalks-tools-w3-pm2)
-5. [Module 3: AI-Assisted Cracking (W3-PM-FINAL)](#-module-3-ai-assisted-cracking-with-hexstrike-mcp--claude-desktop-w3-pm-final)
-6. [Summary of Results](#-summary-of-results)
-7. [Flags Captured](#-flags-captured)
-8. [Key Learnings](#-key-learnings)
-9. [Conclusion](#-conclusion)
+2. [Background](#-background)
+3. [Tools Used](#-tools-used)
+4. [Target Files](#-target-files)
+5. [Module 1: JTR John + Johnny (W3-PM1)](#-module-1-jtr-john--johnny-w3-pm1)
+6. [Module 2: Networkwalks Tools (W3-PM2)](#-module-2-networkwalks-tools-w3-pm2)
+7. [Module 3: HexStrike MCP Server Setup](#-module-3-hexstrike-mcp-server-setup)
+8. [Module 4: AI-Assisted Password Cracking (W3-PM-FINAL)](#-module-4-ai-assisted-password-cracking-w3-pm-final)
+9. [Summary of Results](#-summary-of-results)
+10. [Flags Captured](#-flags-captured)
+11. [Key Learnings](#-key-learnings)
+12. [Conclusion](#-conclusion)
 
 ---
 
 ## 📌 Project Overview
 
-This project covers three password cracking lab modules completed during Week 3 of the Cybersecurity Training program at **Networkwalks Academy**.
+This project covers **four password cracking lab modules** completed during **Week 3** of the Cybersecurity Training program at **Networkwalks Academy**.
 
 | Module | Title | Tool/Method |
 | :--- | :--- | :--- |
 | **W3-PM1** | Password Cracking with JTR | JTR John (Terminal) + Johnny (GUI) |
 | **W3-PM2** | Password Cracking with Networkwalks Tools | Hash Calculator + Password Cracker (Online) |
-| **W3-PM-FINAL** | AI-Assisted Password Cracking | HexStrike MCP + Claude Desktop + JTR |
+| **W3-PM-FINAL (Part 1)** | HexStrike MCP Server Setup | Claude Desktop + HexStrike MCP |
+| **W3-PM-FINAL (Part 2)** | AI-Assisted Password Cracking | HexStrike MCP + Claude Desktop + JTR |
 
-### Target Files
+### Project Objective
 
-| File | Source |
-| :--- | :--- |
-| My Locked PDF1.pdf | Main lab target |
-| My Locked PDF2.pdf | Trainer provided |
-| My Locked PDF3.pdf | Trainer provided |
-| networkwalks_flag1.pdf | AI Module target |
+The main objective of this project was to:
+
+1. Learn how password cracking works in real-world scenarios
+2. Understand different password cracking tools and methods
+3. Crack passwords of protected PDF files using various techniques
+4. Understand why strong passwords are essential for security
+5. Learn how to set up AI-powered MCP servers for cybersecurity automation
+6. Understand how AI can assist in password cracking tasks
+
+---
+
+## 📌 Background
+
+### What is John the Ripper (JTR)?
+
+**John the Ripper (JTR)** is a popular password cracking tool used by security professionals to test how strong passwords are. It started as a tool for Unix systems but now works on Windows, Linux, and Mac. It can check many types of password hashes and also unlock password protected files like PDF, ZIP, and Office documents.
+
+### What is Johnny?
+
+**Johnny** is the graphical version of John the Ripper. It gives a simple point and click screen, so beginners can use JTR without typing long commands. Both tools are widely used in security testing and learning labs to understand password safety.
+
+### What are Networkwalks Tools?
+
+**Networkwalks Tools** are free online tools that allow users to extract crackable hashes from PDF files and perform dictionary attacks directly in a web browser without installing anything.
+
+### What is HexStrike MCP?
+
+**HexStrike MCP** is an AI-powered MCP (Model Context Protocol) server that integrates with Claude Desktop to automate cybersecurity tasks like password cracking.
+
+### What is Claude Desktop?
+
+**Claude Desktop** is an AI assistant interface that can communicate with MCP servers like HexStrike to perform automated security tasks.
 
 ---
 
@@ -54,12 +86,24 @@ This project covers three password cracking lab modules completed during Week 3 
 | **John the Ripper (JTR)** | Terminal-based password cracking tool |
 | **Johnny** | Graphical user interface for JTR |
 | **pdf2john.pl / pdf2john** | Extract crackable hashes from PDF files |
-| **rockyou.txt** | Default wordlist in Kali Linux |
+| **rockyou.txt** | Default wordlist in Kali Linux (14+ million passwords) |
+| **JTR_default_password.txt** | Custom wordlist provided by trainer (3,546 words) |
 | **Networkwalks Hash Calculator** | Online tool to extract PDF hashes |
 | **Networkwalks Password Cracker** | Online tool for dictionary attacks |
 | **HexStrike MCP Server** | AI-powered MCP server |
 | **Claude Desktop** | AI assistant interface |
-| **JTR_default_password.txt** | Custom wordlist (3,546 words) |
+| **PDF Viewer** | To verify cracked passwords |
+
+---
+
+## 📌 Target Files
+
+| File | Source | Status |
+| :--- | :--- | :--- |
+| My Locked PDF1.pdf | Main lab target | ✅ Cracked |
+| My Locked PDF2.pdf | Trainer provided | ✅ Cracked |
+| My Locked PDF3.pdf | Trainer provided | ✅ Cracked |
+| networkwalks_flag1.pdf | AI Module target | ✅ Cracked |
 
 ---
 
@@ -69,11 +113,19 @@ This project covers three password cracking lab modules completed during Week 3 
 
 Crack the password of `My Locked PDF1.pdf` using **JTR John (Terminal)** and **Johnny (GUI)**.
 
+### Lab Manual Reference
+
+This module is based on the lab manual: **W3-PM1 - Week3 - Project Module1 - Password Cracking with JTR v1.pdf**
+
 ---
 
 ### Step 1: Locate the Target PDF File
 
 The target file `My Locked PDF1.pdf` was located in the Downloads folder.
+
+```bash
+ls -la ~/Downloads/My\ Locked\ PDF1.pdf
+```
 
 ![Lock PDF](evidences/module-1/1-lock-pdf.png)
 
@@ -87,6 +139,11 @@ The hash was extracted using `pdf2john.pl`:
 
 ```bash
 perl /usr/share/john/pdf2john.pl "My Locked PDF1.pdf" > hash1.txt
+```
+
+**Alternative Method:**
+```bash
+pdf2john "My Locked PDF1.pdf" > hash1.txt
 ```
 
 ![Hash Extraction](evidences/module-1/2-hash-extraction.png)
@@ -120,8 +177,15 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash1.txt
 
 **Output:**
 ```
+Using default input encoding: UTF-8
+Loaded 1 password hash (PDF [MD5 SHA2 RC4/AES 32/64])
+Cost 1 (revision) is 4 for all loaded hashes
+Will run 4 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
 good-luck        (My Locked PDF1.pdf)
-1g 0:00:00:10 DONE (2026-08-26 22:34)
+1g 0:00:00:10 DONE (2026-08-26 22:34) 0.09775g/s 91939p/s 91939c/s 91939C/s goodgirl19..gonzales23
+Use the "--show --format=PDF" options to display all of the cracked passwords reliably
+Session completed.
 ```
 
 ![JTR Cracking](evidences/module-1/4-jtr-cracking.png)
@@ -139,6 +203,7 @@ john --show hash1.txt
 **Output:**
 ```
 My Locked PDF1.pdf:good-luck
+
 1 password hash cracked, 0 left
 ```
 
@@ -150,7 +215,12 @@ My Locked PDF1.pdf:good-luck
 
 ### Step 6: Crack with Johnny (GUI)
 
-Johnny GUI was opened and the hash was loaded. The attack was started and the password was displayed.
+Johnny GUI was opened and the hash was loaded:
+
+1. Opened Johnny: `johnny`
+2. Clicked **"Open Password File"** and selected `hash1.txt`
+3. Clicked **"Start new attack"**
+4. Password `good-luck` was displayed in the results pane
 
 ![Johnny GUI](evidences/module-1/6-johnny-gui.png)
 
@@ -187,6 +257,10 @@ The PDF was opened using `good-luck`.
 
 Crack the password of `My Locked PDF1.pdf` using **Networkwalks Hash Calculator** and **Password Cracker**.
 
+### Lab Manual Reference
+
+This module is based on the lab manual: **W3-PM2 - Week3 - Project Module2 - Password Cracking with NW Tools v1.pdf**
+
 ---
 
 ### Step 1: Open Hash Calculator
@@ -201,7 +275,7 @@ Crack the password of `My Locked PDF1.pdf` using **Networkwalks Hash Calculator*
 
 ### Step 2: Select PDF Tab and Upload File
 
-The PDF tab was selected and `My Locked PDF1.pdf` was uploaded.
+The **"PDF"** tab was selected and `My Locked PDF1.pdf` was uploaded.
 
 ![Hash Extracted](evidences/module-2/2-hash-extracted.png)
 
@@ -271,17 +345,19 @@ The PDF was opened using `good-luck`.
 
 ---
 
-## 📌 Module 3: AI-Assisted Cracking with HexStrike MCP + Claude Desktop (W3-PM-FINAL)
+## 📌 Module 3: HexStrike MCP Server Setup
 
 ### Task
 
-Setup HexStrike MCP Server with Claude Desktop and crack `networkwalks_flag1.pdf` using AI assistance.
+Setup HexStrike MCP Server on Kali Linux with Claude Desktop.
+
+### Lab Manual Reference
+
+This module is based on the lab manual: **7.2.1. LAB PRACTICE - How to setup Hexstrike MCP with Claude v1.pdf**
 
 ---
 
-### Part A: HexStrike MCP Server Setup
-
-#### Step 1: Install Claude Desktop
+### Step 1: Install Claude Desktop
 
 ```bash
 # Add GPG key
@@ -301,7 +377,7 @@ sudo apt install claude-desktop
 
 ---
 
-#### Step 2: Clone HexStrike Repository
+### Step 2: Clone HexStrike Repository
 
 ```bash
 git clone https://github.com/0x4m4/hexstrike-ai.git
@@ -314,7 +390,7 @@ cd hexstrike-ai
 
 ---
 
-#### Step 3: Create Virtual Environment
+### Step 3: Create Virtual Environment
 
 ```bash
 python3 -m venv hexstrike-env
@@ -327,7 +403,7 @@ source hexstrike-env/bin/activate
 
 ---
 
-#### Step 4: Install Python Dependencies
+### Step 4: Install Python Dependencies
 
 ```bash
 pip3 install -r requirements.txt
@@ -339,7 +415,7 @@ pip3 install -r requirements.txt
 
 ---
 
-#### Step 5: Configure MCP Server
+### Step 5: Configure MCP Server
 
 Configuration file `~/.config/Claude/claude_desktop_config.json`:
 
@@ -364,7 +440,7 @@ Configuration file `~/.config/Claude/claude_desktop_config.json`:
 
 ---
 
-#### Step 6: Run the Server
+### Step 6: Run the Server
 
 ```bash
 cd ~/Downloads/hexstrike-ai
@@ -374,10 +450,13 @@ python3 hexstrike_mcp.py --server http://localhost:8888
 
 **Output:**
 ```
-[🔥 HexStrike MCP] ✅ 🚀 Starting HexStrike AI MCP Client v6.0
-[🔥 HexStrike MCP] ✅ 🎯 Successfully connected to HexStrike AI API Server
-[🔥 HexStrike MCP] ✅ 🏥 Server health status: healthy
-[🔥 HexStrike MCP] ✅ 🤖 Ready to serve AI agents with enhanced cybersecurity capabilities
+[🔥 HexStrike MCP] 2026-08-27 01:50:34 [INFO] ✅ 🚀 Starting HexStrike AI MCP Client v6.0
+[🔥 HexStrike MCP] 2026-08-27 01:50:34 [INFO] ✅ 🔗 Connecting to: http://localhost:8888
+[🔥 HexStrike MCP] 2026-08-27 01:50:34 [INFO] ✅ 🔗 Attempting to connect to HexStrike AI API at http://localhost:8888 (attempt 1/3)
+[🔥 HexStrike MCP] 2026-08-27 01:50:37 [INFO] ✅ 🎯 Successfully connected to HexStrike AI API Server at http://localhost:8888
+[🔥 HexStrike MCP] 2026-08-27 01:50:37 [INFO] ✅ 🏥 Server health status: healthy
+[🔥 HexStrike MCP] 2026-08-27 01:50:37 [INFO] ✅ 📊 Server version: 6.0.0
+[🔥 HexStrike MCP] 2026-08-27 01:50:38 [INFO] ✅ 🤖 Ready to serve AI agents with enhanced cybersecurity capabilities
 ```
 
 ![HexStrike Running](evidences/module-3/6-hexstrike-running.png)
@@ -386,11 +465,38 @@ python3 hexstrike_mcp.py --server http://localhost:8888
 
 ---
 
-### Part B: AI-Assisted Password Cracking
+### Results – Module 3
 
-#### Step 1: Download Target PDF
+| Item | Details |
+| :--- | :--- |
+| **Claude Desktop** | ✅ Installed |
+| **HexStrike Repository** | ✅ Cloned |
+| **Virtual Environment** | ✅ Created |
+| **Python Dependencies** | ✅ Installed |
+| **MCP Server Configuration** | ✅ Added |
+| **HexStrike MCP Server** | ✅ Running |
+
+---
+
+## 📌 Module 4: AI-Assisted Password Cracking (W3-PM-FINAL)
+
+### Task
+
+Crack the password of `networkwalks_flag1.pdf` using **JTR JOHN** with the help of **AI** (HexStrike-AI MCP with Claude Desktop).
+
+### Lab Manual Reference
+
+This module is based on the lab manual: **z. Optional Module Lab - JTR Password Cracking Lab v1 (AI-version).pdf**
+
+---
+
+### Step 1: Download Target PDF
 
 `networkwalks_flag1.pdf` was downloaded and placed on Desktop.
+
+```bash
+ls -la ~/Desktop/networkwalks_flag1.pdf
+```
 
 ![Target PDF](evidences/module-3/7-target-pdf.png)
 
@@ -398,18 +504,18 @@ python3 hexstrike_mcp.py --server http://localhost:8888
 
 ---
 
-#### Step 2: AI Prompt 1 – Check JTR Installation
+### Step 2: AI Prompt 1 – Check JTR Installation
 
 **Prompt:**
 ```
 Check if John the Ripper is installed in this Hexstrike MCP and show me its version
 ```
 
-**Response:**
+**Claude's Response:**
 ```
 John the Ripper is installed on the HexStrike server, at /usr/sbin/john.
 
-Version: 1.9.0-jumbo-1+bleeding-aec1328d6c (built 2021-11-02)
+Version: 1.9.0-jumbo-1+bleeding-aec1328d6c (built 2021-11-02), the community "jumbo" edition, compiled with OpenMP support (linux-gnu 64-bit x86_64 AVX2 AC).
 ```
 
 ![AI Prompt 1](evidences/module-3/8-ai-prompt-1.png)
@@ -418,14 +524,14 @@ Version: 1.9.0-jumbo-1+bleeding-aec1328d6c (built 2021-11-02)
 
 ---
 
-#### Step 3: AI Prompt 2 – Calculate PDF Hash
+### Step 3: AI Prompt 2 – Calculate PDF Hash
 
 **Prompt:**
 ```
 Please calculate the hash value of this PDF file: /home/jenishkali/Desktop/networkwalks_flag1.pdf
 ```
 
-**Response:**
+**Claude's Response:**
 ```
 SHA256: f569ce5208a64b0f73f5a98f2187eafcd8282641fb27afa0c1a30d83b67ef06
 MD5: 7fe04d052b19879aaa9fcac0b5dce138
@@ -437,20 +543,22 @@ MD5: 7fe04d052b19879aaa9fcac0b5dce138
 
 ---
 
-#### Step 4: AI Prompt 3 – Crack the Password
+### Step 4: AI Prompt 3 – Crack the Password
 
 **Prompt:**
 ```
 Please use JTR tool in this hexstrike MCP server to crack the password of this PDF file. Use the rockyou.txt wordlist dictionary.
 ```
 
-**Response:**
+**Claude's Response:**
 ```
+Extracted the PDF hash successfully. Now running John the Ripper against it with rockyou.txt.
+
 Cracked it instantly.
 
 PDF password: password1
 
-John found it in the rockyou.txt wordlist on the first pass.
+John found it in the rockyou.txt wordlist on the first pass (loaded as a PDF MD5 SHA2 RC4/AES 32/64 hash type).
 ```
 
 ![AI Prompt 3](evidences/module-3/10-ai-prompt-3.png)
@@ -459,7 +567,7 @@ John found it in the rockyou.txt wordlist on the first pass.
 
 ---
 
-#### Step 5: Verify the Password
+### Step 5: Verify the Password
 
 The PDF was opened using `password1`.
 
@@ -469,7 +577,7 @@ The PDF was opened using `password1`.
 
 ---
 
-### Results – Module 3
+### Results – Module 4
 
 | Item | Details |
 | :--- | :--- |
@@ -501,17 +609,23 @@ The PDF was opened using `password1`.
 
 ![Flag 1](evidences/flags/flag1.png)
 
+---
+
 | # | Flag | Source |
 | :--- | :--- | :--- |
 | 2 | `nw{networkwalks_flag1_jtr_270521_1}` | networkwalks_flag1.pdf |
 
 ![Flag 2](evidences/flags/flag2.png)
 
+---
+
 | # | Flag | Source |
 | :--- | :--- | :--- |
 | 3 | `nw{networkwalks_persistence_jtr_270521}` | My Locked PDF2.pdf |
 
 ![Flag 3](evidences/flags/flag3.png)
+
+---
 
 | # | Flag | Source |
 | :--- | :--- | :--- |
@@ -539,15 +653,18 @@ The PDF was opened using `password1`.
 
 6. **Multiple Methods** – The same password (`good-luck`) was cracked using three different methods.
 
+7. **MCP Server Setup** – Setting up AI-powered servers requires Python, virtual environments, and proper configuration.
+
 ---
 
 ## 📌 Conclusion
 
-During Week 3, I completed three password cracking lab modules:
+During Week 3, I completed four password cracking lab modules:
 
 * **W3-PM1:** Successfully cracked `My Locked PDF1.pdf` using JTR Terminal and Johnny GUI.
 * **W3-PM2:** Successfully cracked `My Locked PDF1.pdf` using Networkwalks online tools.
-* **W3-PM-FINAL:** Successfully set up HexStrike MCP Server and used AI to crack `networkwalks_flag1.pdf`.
+* **Module 3:** Successfully set up HexStrike MCP Server with Claude Desktop.
+* **W3-PM-FINAL:** Successfully used AI to crack `networkwalks_flag1.pdf`.
 
 ### Final Observations
 
@@ -555,11 +672,9 @@ During Week 3, I completed three password cracking lab modules:
 * Multiple tools exist for password cracking
 * AI can assist with password cracking
 * Strong passwords are essential for security
-
+* MCP servers enable AI to interact with security tools
 
 # -End-
-
----
 
 ## 👤 Author
 
@@ -567,25 +682,3 @@ During Week 3, I completed three password cracking lab modules:
 Cybersecurity Trainee | B082  
 Networkwalks Academy  
 *www.linkedin.com/in/jenikshrestha*
-
----
-
-## 📌 Project Information
-
-| **Program** | Cybersecurity Training at Networkwalks Academy |
-| :--- | :--- |
-| **Week** | 03 |
-| **Modules** | W3-PM1 | W3-PM2 | W3-PM-FINAL |
-| **Project Area** | Password Cracking |
-| **Tools Used** | JTR, Johnny, Networkwalks Tools, HexStrike MCP, Claude Desktop |
-
----
-
-<div align="center">
-
-**© Networkwalks Academy. All Rights Reserved.**
-
-*This report is submitted as part of the Cybersecurity Training Program.*
-
-</div>
-```

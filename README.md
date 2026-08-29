@@ -784,6 +784,10 @@ PDFs Cracked	Yes – using Networkwalks Tools
 #	Flag / Credential	Source
 5	xxxxx:xxxxx	medirozahospital.com (Patient Portal)
 <img width="600" alt="curl verification showing location dashboard php" src="https://github.com/user-attachments/assets/placeholder_curl_output.png" />
+<img width="1016" height="902" alt="Screenshot 2026-08-29 at 15-13-12 Hash Calculator - Networkwalks Academy" src="https://github.com/user-attachments/assets/74411ff7-d45e-4d54-b7d6-00d01be5d832" />
+<img width="1073" height="919" alt="pdf1 1" src="https://github.com/user-attachments/assets/61eef888-f7e2-4bfe-90bb-132b4aad100a" />
+<img width="803" height="623" alt="dashboard1" src="https://github.com/user-attachments/assets/7d7af293-a7b2-45c5-b315-44428f8925b8" />
+
 ---
 
 ## 📌 Key Learnings
